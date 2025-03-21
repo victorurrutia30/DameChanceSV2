@@ -1,0 +1,25 @@
+﻿@model DameChanceSV2.Models.RecuperarContrasenaViewModel
+
+@{
+    ViewData["Title"] = "Recuperar Contraseña";
+}
+
+<h2>Recuperar Contraseña</h2>
+
+<form asp-action="RecuperarContrasena" method="post">
+    <div class="form-group">
+        <label asp-for="Correo"></label>
+        <input asp-for="Correo" class="form-control" />
+        <span asp-validation-for="Correo" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Enlace de Recuperación</button>
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
