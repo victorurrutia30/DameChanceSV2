@@ -8,5 +8,6 @@
         public string Contrasena { get; set; }
         public bool Estado { get; set; }
         public int RolId { get; set; }
+        public DateTime FechaRegistro { get; set; }
     }
 }

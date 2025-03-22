@@ -4,21 +4,32 @@
     ViewData["Title"] = "Recuperar Contraseña";
 }
 
-<h2>Recuperar Contraseña</h2>
+<div class="recovery-wrapper d-flex justify-content-center align-items-center">
+    <div class="recovery-card">
+        <h2 class="text-center mb-4"><i class="bi bi-shield-lock-fill me-2"></i> Recuperar Contraseña</h2>
 
-<form asp-action="RecuperarContrasena" method="post">
-    <div class="form-group">
-        <label asp-for="Correo"></label>
-        <input asp-for="Correo" class="form-control" />
-        <span asp-validation-for="Correo" class="text-danger"></span>
+        <form asp-action="RecuperarContrasena" method="post">
+            <div class="form-group mb-4">
+                <label asp-for="Correo" class="form-label">
+                    <i class="bi bi-envelope-at me-1"></i> Correo electrónico
+                </label>
+                <input asp-for="Correo" class="form-control input-custom" />
+                <span asp-validation-for="Correo" class="text-danger small"></span>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-recover">
+                    <i class="bi bi-send-check-fill me-1"></i> Enviar Enlace de Recuperación
+                </button>
+            </div>
+        </form>
+
+        @if (ViewBag.Message != null)
+        {
+            <div class="alert alert-success text-center">@ViewBag.Message</div>
+        }
     </div>
-    <button type="submit" class="btn btn-primary">Enviar Enlace de Recuperación</button>
-</form>
-
-@if (ViewBag.Message != null)
-{
-    <div class="alert alert-success">@ViewBag.Message</div>
-}
+</div>
 
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
