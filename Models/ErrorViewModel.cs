@@ -1,4 +1,4 @@
-namespace DameChanceSV2.Models
+﻿namespace DameChanceSV2.Models
 {
     public class ErrorViewModel
     {

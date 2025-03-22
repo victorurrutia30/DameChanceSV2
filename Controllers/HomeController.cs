@@ -1,4 +1,4 @@
-using System.Diagnostics;
+ï»¿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using DameChanceSV2.Models;
 using DameChanceSV2.DAL;
@@ -77,7 +77,7 @@ namespace DameChanceSV2.Controllers
 
             if (ModelState.IsValid)
             {
-                // Si deseas hashear la contraseña, descomenta la siguiente línea
+                // Si deseas hashear la contraseÃ±a, descomenta la siguiente lÃ­nea
                 // model.Contrasena = PasswordHelper.HashPassword(model.Contrasena);
 
                 _usuarioDAL.InsertUsuario(model);
@@ -141,15 +141,15 @@ namespace DameChanceSV2.Controllers
         }
 
         // =====================================
-        // MÉTODO PRIVADO DE CHEQUEO
+        // MÃ‰TODO PRIVADO DE CHEQUEO
         // =====================================
         private bool EsAdmin()
         {
-            // Verificar si existe cookie de sesión
+            // Verificar si existe cookie de sesiÃ³n
             var userSession = Request.Cookies["UserSession"];
             if (string.IsNullOrEmpty(userSession)) return false;
 
-            // Verificar si la cookie es un int válido
+            // Verificar si la cookie es un int vÃ¡lido
             if (!int.TryParse(userSession, out int userId)) return false;
 
             // Buscar el usuario en la BD
